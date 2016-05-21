@@ -18,7 +18,7 @@ public class UnsafeThread {
         Thread thread = new Thread(new Runnable() {
             @Override
             public void run() {
-                for (int i = 0; i < 100000; i++) {
+                for (int i = 0; i < 1000000; i++) {
                     con.plus();
                 }
                 System.out.println(con);
@@ -27,7 +27,7 @@ public class UnsafeThread {
         Thread thread2 = new Thread(new Runnable() {
             @Override
             public void run() {
-                for (int i = 0; i < 100000; i++) {
+                for (int i = 0; i < 1000000; i++) {
                     con.reduce();
                 }
                 System.out.println(con);
