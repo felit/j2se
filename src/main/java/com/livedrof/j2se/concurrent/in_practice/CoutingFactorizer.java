@@ -42,7 +42,9 @@ public class CoutingFactorizer {
         thread1.join();
         thread2.join();
         Thread.currentThread().sleep(1000);
+        //这里得到的结果永远是2*num
         System.out.println(cf.getCount());
+        // 这里返回错误的结果
         System.out.println(uc.getCount());
     }
 
