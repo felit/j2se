@@ -44,7 +44,7 @@ public class CoutingFactorizer {
         Thread.currentThread().sleep(1000);
         //这里得到的结果永远是2*num
         System.out.println(cf.getCount());
-        // 这里返回错误的结果
+        // 这里返回错误的不确定的结果，如：199853等
         System.out.println(uc.getCount());
     }
 
