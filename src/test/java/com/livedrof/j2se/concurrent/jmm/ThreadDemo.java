@@ -1,4 +1,6 @@
-package com.livedrof.j2se.jmm;
+package com.livedrof.j2se.concurrent.jmm;
+
+import org.junit.Test;
 
 import java.util.Map;
 
@@ -11,7 +13,8 @@ import java.util.Map;
  * find /proc/xxx/task
  */
 public class ThreadDemo {
-    public static void main(String args[]) throws InterruptedException {
+    @Test
+    public void test() throws InterruptedException {
         printAllThreads();
         Thread.sleep(1000);
         System.out.println("-----------------");

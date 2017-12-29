@@ -1,0 +1,5 @@
+linux的5种IO模型
+AsynchronousSocketChannel
+AsynchronousServerSocketChannel
+AsynchronousFileChannel
+AsynchronousDatagramChannel
