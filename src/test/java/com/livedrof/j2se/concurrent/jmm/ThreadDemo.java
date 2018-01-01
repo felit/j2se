@@ -2,6 +2,9 @@ package com.livedrof.j2se.concurrent.jmm;
 
 import org.junit.Test;
 
+import java.lang.management.ManagementFactory;
+import java.lang.management.ThreadInfo;
+import java.lang.management.ThreadMXBean;
 import java.util.Map;
 
 /**
@@ -10,13 +13,14 @@ import java.util.Map;
  * jps| grep ThreadDemo| awk '{print $1}'| xargs jstack
  * 查看线程：
  * jps| grep ThreadDemo| awk '{print $1}'| xargs pstree -p
+ * ps -ef| grep ThreadDemo|grep test| awk '{print $2}'| xargs pstree -p
  * find /proc/xxx/task
  */
 public class ThreadDemo {
     @Test
     public void test() throws InterruptedException {
         printAllThreads();
-        Thread.sleep(1000);
+        Thread.sleep(100000);
         System.out.println("-----------------");
         printAllThreads();
         System.out.println("-----------------");
@@ -51,5 +55,15 @@ public class ThreadDemo {
         Thread[] threads = new Thread[actualSize];
         System.arraycopy(slacks, 0, threads, 0, actualSize);
         return threads;
+    }
+
+    @Test
+    public void testThread() throws InterruptedException {
+        ThreadMXBean threadMXBean = ManagementFactory.getThreadMXBean();
+        ThreadInfo[] threadInfos = threadMXBean.dumpAllThreads(false, false);
+        for (ThreadInfo threadInfo : threadInfos) {
+            System.out.println("[" + threadInfo.getThreadId() + "]" + threadInfo.getThreadName());
+        }
+        Thread.sleep(100000);
     }
 }

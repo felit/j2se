@@ -1,0 +1,24 @@
+package com.livedrof.j2se.concurrent.jmm;
+
+public class Daemon {
+    public static void main(String args[]) {
+        Thread thread = new Thread(new DaemonRunner(), "DaemonRunner");
+//        thread.setDaemon(true);
+        thread.start();
+    }
+
+    static class DaemonRunner implements Runnable {
+
+        @Override
+        public void run() {
+            for (StackTraceElement e : Thread.currentThread().getStackTrace()) {
+                System.out.println(e);
+            }
+            try {
+                SleepUtils.second(10);
+            } finally {
+                System.out.println("DaemonThread finally run.");
+            }
+        }
+    }
+}
