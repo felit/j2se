@@ -15,7 +15,7 @@ public class TestChannelCopy {
             copy(src, dest);
 //            copyAlt(src, dest);
         } catch (IOException ioe) {
-            System.err.println("I/O error: " + ioe.getMessage());
+            System.err.println("I/O error:" + ioe.getMessage());
         } finally {
             try {
                 src.close();

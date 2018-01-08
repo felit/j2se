@@ -1,0 +1,115 @@
+2018-01-08 17:31:39
+Full thread dump Java HotSpot(TM) 64-Bit Server VM (25.66-b17 mixed mode):
+
+"Attach Listener" #15 daemon prio=9 os_prio=0 tid=0x00007f5e38001000 nid=0x4cb9 waiting on condition [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"ProcessThread(sid:0 cport:2181):" #14 prio=5 os_prio=0 tid=0x00007f5e742e1000 nid=0x4c70 waiting on condition [0x00007f5e56736000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x00000000d78a59f8> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
+	at org.apache.zookeeper.server.PrepRequestProcessor.run(PrepRequestProcessor.java:122)
+
+"SyncThread:0" #13 prio=5 os_prio=0 tid=0x00007f5e742f0800 nid=0x4c6f waiting on condition [0x00007f5e56837000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x00000000d7883cb0> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
+	at org.apache.zookeeper.server.SyncRequestProcessor.run(SyncRequestProcessor.java:127)
+
+"SessionTracker" #12 prio=5 os_prio=0 tid=0x00007f5e742ea000 nid=0x4c6e in Object.wait() [0x00007f5e56938000]
+   java.lang.Thread.State: TIMED_WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	- waiting on <0x00000000d7852698> (a org.apache.zookeeper.server.SessionTrackerImpl)
+	at org.apache.zookeeper.server.SessionTrackerImpl.run(SessionTrackerImpl.java:146)
+	- locked <0x00000000d7852698> (a org.apache.zookeeper.server.SessionTrackerImpl)
+
+"NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181" #11 daemon prio=5 os_prio=0 tid=0x00007f5e74286800 nid=0x4c6d runnable [0x00007f5e56a39000]
+   java.lang.Thread.State: RUNNABLE
+	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
+	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
+	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:79)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
+	- locked <0x00000000d7672888> (a sun.nio.ch.Util$2)
+	- locked <0x00000000d7672878> (a java.util.Collections$UnmodifiableSet)
+	- locked <0x00000000d7672760> (a sun.nio.ch.EPollSelectorImpl)
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
+	at org.apache.zookeeper.server.NIOServerCnxnFactory.run(NIOServerCnxnFactory.java:173)
+	at java.lang.Thread.run(Thread.java:745)
+
+"RMI TCP Accept-0" #10 daemon prio=5 os_prio=0 tid=0x00007f5e74208000 nid=0x4c6b runnable [0x00007f5e56c3b000]
+   java.lang.Thread.State: RUNNABLE
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.AbstractPlainSocketImpl.accept(AbstractPlainSocketImpl.java:409)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:545)
+	at java.net.ServerSocket.accept(ServerSocket.java:513)
+	at sun.rmi.transport.tcp.TCPTransport$AcceptLoop.executeAcceptLoop(TCPTransport.java:400)
+	at sun.rmi.transport.tcp.TCPTransport$AcceptLoop.run(TCPTransport.java:372)
+	at java.lang.Thread.run(Thread.java:745)
+
+"Service Thread" #8 daemon prio=9 os_prio=0 tid=0x00007f5e740c2000 nid=0x4c6a runnable [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"C1 CompilerThread2" #7 daemon prio=9 os_prio=0 tid=0x00007f5e740bd000 nid=0x4c69 waiting on condition [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"C2 CompilerThread1" #6 daemon prio=9 os_prio=0 tid=0x00007f5e740bb800 nid=0x4c68 waiting on condition [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"C2 CompilerThread0" #5 daemon prio=9 os_prio=0 tid=0x00007f5e740b8800 nid=0x4c67 waiting on condition [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Signal Dispatcher" #4 daemon prio=9 os_prio=0 tid=0x00007f5e740b7000 nid=0x4c66 runnable [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Finalizer" #3 daemon prio=8 os_prio=0 tid=0x00007f5e7407f000 nid=0x4c64 in Object.wait() [0x00007f5e57ffe000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	- waiting on <0x00000000d6f070b8> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:143)
+	- locked <0x00000000d6f070b8> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:164)
+	at java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:209)
+
+"Reference Handler" #2 daemon prio=10 os_prio=0 tid=0x00007f5e7407d000 nid=0x4c63 in Object.wait() [0x00007f5e5c15d000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	- waiting on <0x00000000d6f06af8> (a java.lang.ref.Reference$Lock)
+	at java.lang.Object.wait(Object.java:502)
+	at java.lang.ref.Reference$ReferenceHandler.run(Reference.java:157)
+	- locked <0x00000000d6f06af8> (a java.lang.ref.Reference$Lock)
+
+"main" #1 prio=5 os_prio=0 tid=0x00007f5e7400a000 nid=0x4c5d waiting on condition [0x00007f5e7cc98000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x00000000d7606b80> (a java.util.concurrent.CountDownLatch$Sync)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.parkAndCheckInterrupt(AbstractQueuedSynchronizer.java:836)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.doAcquireSharedInterruptibly(AbstractQueuedSynchronizer.java:997)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireSharedInterruptibly(AbstractQueuedSynchronizer.java:1304)
+	at java.util.concurrent.CountDownLatch.await(CountDownLatch.java:231)
+	at org.apache.zookeeper.server.ZooKeeperServerMain.runFromConfig(ZooKeeperServerMain.java:122)
+	at org.apache.zookeeper.server.ZooKeeperServerMain.initializeAndRun(ZooKeeperServerMain.java:87)
+	at org.apache.zookeeper.server.ZooKeeperServerMain.main(ZooKeeperServerMain.java:53)
+	at org.apache.zookeeper.server.quorum.QuorumPeerMain.initializeAndRun(QuorumPeerMain.java:116)
+	at org.apache.zookeeper.server.quorum.QuorumPeerMain.main(QuorumPeerMain.java:78)
+
+"VM Thread" os_prio=0 tid=0x00007f5e74078000 nid=0x4c62 runnable 
+
+"GC task thread#0 (ParallelGC)" os_prio=0 tid=0x00007f5e7401f800 nid=0x4c5e runnable 
+
+"GC task thread#1 (ParallelGC)" os_prio=0 tid=0x00007f5e74021000 nid=0x4c5f runnable 
+
+"GC task thread#2 (ParallelGC)" os_prio=0 tid=0x00007f5e74023000 nid=0x4c60 runnable 
+
+"GC task thread#3 (ParallelGC)" os_prio=0 tid=0x00007f5e74024800 nid=0x4c61 runnable 
+
+"VM Periodic Task Thread" os_prio=0 tid=0x00007f5e7421f000 nid=0x4c6c waiting on condition 
+
+JNI global references: 92
+

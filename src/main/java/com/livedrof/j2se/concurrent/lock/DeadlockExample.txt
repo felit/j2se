@@ -1,0 +1,133 @@
+Full thread dump Java HotSpot(TM) 64-Bit Server VM (25.66-b17 mixed mode):
+
+"Attach Listener" #13 daemon prio=9 os_prio=0 tid=0x00007f60ec001000 nid=0x41ae waiting on condition [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"DestroyJavaVM" #12 prio=5 os_prio=0 tid=0x00007f612400b000 nid=0x416a waiting on condition [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"lock-thread2" #11 prio=5 os_prio=0 tid=0x00007f612421f000 nid=0x418c waiting on condition [0x00007f6105946000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x00000000d70a4928> (a java.util.concurrent.locks.ReentrantLock$NonfairSync)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.parkAndCheckInterrupt(AbstractQueuedSynchronizer.java:836)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireQueued(AbstractQueuedSynchronizer.java:870)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquire(AbstractQueuedSynchronizer.java:1199)
+	at java.util.concurrent.locks.ReentrantLock$NonfairSync.lock(ReentrantLock.java:209)
+	at java.util.concurrent.locks.ReentrantLock.lock(ReentrantLock.java:285)
+	at com.livedrof.j2se.concurrent.lock.DeadlockExample$2.run(DeadlockExample.java:31)
+	at java.lang.Thread.run(Thread.java:745)
+
+"lock-thread1" #10 prio=5 os_prio=0 tid=0x00007f612421d000 nid=0x418b waiting on condition [0x00007f6105a47000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x00000000d70a4958> (a java.util.concurrent.locks.ReentrantLock$NonfairSync)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.parkAndCheckInterrupt(AbstractQueuedSynchronizer.java:836)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireQueued(AbstractQueuedSynchronizer.java:870)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquire(AbstractQueuedSynchronizer.java:1199)
+	at java.util.concurrent.locks.ReentrantLock$NonfairSync.lock(ReentrantLock.java:209)
+	at java.util.concurrent.locks.ReentrantLock.lock(ReentrantLock.java:285)
+	at com.livedrof.j2se.concurrent.lock.DeadlockExample$1.run(DeadlockExample.java:17)
+	at java.lang.Thread.run(Thread.java:745)
+
+"Service Thread" #9 daemon prio=9 os_prio=0 tid=0x00007f6124203000 nid=0x4189 runnable [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"C1 CompilerThread2" #8 daemon prio=9 os_prio=0 tid=0x00007f6124200800 nid=0x4188 waiting on condition [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"C2 CompilerThread1" #7 daemon prio=9 os_prio=0 tid=0x00007f61241fc800 nid=0x4187 waiting on condition [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"C2 CompilerThread0" #6 daemon prio=9 os_prio=0 tid=0x00007f61241fb000 nid=0x4186 waiting on condition [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Monitor Ctrl-Break" #5 daemon prio=5 os_prio=0 tid=0x00007f61241f8000 nid=0x4185 runnable [0x00007f6106565000]
+   java.lang.Thread.State: RUNNABLE
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:170)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	- locked <0x00000000d7113890> (a java.io.InputStreamReader)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	- locked <0x00000000d7113890> (a java.io.InputStreamReader)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at com.intellij.rt.execution.application.AppMainV2$1.run(AppMainV2.java:64)
+
+"Signal Dispatcher" #4 daemon prio=9 os_prio=0 tid=0x00007f612417f000 nid=0x4183 runnable [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Finalizer" #3 daemon prio=8 os_prio=0 tid=0x00007f6124147000 nid=0x4178 in Object.wait() [0x00007f6106bf2000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	- waiting on <0x00000000d6f070b8> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:143)
+	- locked <0x00000000d6f070b8> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:164)
+	at java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:209)
+
+"Reference Handler" #2 daemon prio=10 os_prio=0 tid=0x00007f6124145000 nid=0x4177 in Object.wait() [0x00007f6106cf3000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	- waiting on <0x00000000d6f06af8> (a java.lang.ref.Reference$Lock)
+	at java.lang.Object.wait(Object.java:502)
+	at java.lang.ref.Reference$ReferenceHandler.run(Reference.java:157)
+	- locked <0x00000000d6f06af8> (a java.lang.ref.Reference$Lock)
+
+"VM Thread" os_prio=0 tid=0x00007f6124140000 nid=0x4176 runnable
+
+"GC task thread#0 (ParallelGC)" os_prio=0 tid=0x00007f6124020800 nid=0x416c runnable
+
+"GC task thread#1 (ParallelGC)" os_prio=0 tid=0x00007f6124022000 nid=0x416d runnable
+
+"GC task thread#2 (ParallelGC)" os_prio=0 tid=0x00007f6124024000 nid=0x416f runnable
+
+"GC task thread#3 (ParallelGC)" os_prio=0 tid=0x00007f6124025800 nid=0x4170 runnable
+
+"VM Periodic Task Thread" os_prio=0 tid=0x00007f6124206000 nid=0x418a waiting on condition
+
+JNI global references: 33
+
+
+Found one Java-level deadlock:
+=============================
+"lock-thread2":
+  waiting for ownable synchronizer 0x00000000d70a4928, (a java.util.concurrent.locks.ReentrantLock$NonfairSync),
+  which is held by "lock-thread1"
+"lock-thread1":
+  waiting for ownable synchronizer 0x00000000d70a4958, (a java.util.concurrent.locks.ReentrantLock$NonfairSync),
+  which is held by "lock-thread2"
+
+Java stack information for the threads listed above:
+===================================================
+"lock-thread2":
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x00000000d70a4928> (a java.util.concurrent.locks.ReentrantLock$NonfairSync)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.parkAndCheckInterrupt(AbstractQueuedSynchronizer.java:836)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireQueued(AbstractQueuedSynchronizer.java:870)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquire(AbstractQueuedSynchronizer.java:1199)
+	at java.util.concurrent.locks.ReentrantLock$NonfairSync.lock(ReentrantLock.java:209)
+	at java.util.concurrent.locks.ReentrantLock.lock(ReentrantLock.java:285)
+	at com.livedrof.j2se.concurrent.lock.DeadlockExample$2.run(DeadlockExample.java:31)
+	at java.lang.Thread.run(Thread.java:745)
+"lock-thread1":
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x00000000d70a4958> (a java.util.concurrent.locks.ReentrantLock$NonfairSync)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.parkAndCheckInterrupt(AbstractQueuedSynchronizer.java:836)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireQueued(AbstractQueuedSynchronizer.java:870)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquire(AbstractQueuedSynchronizer.java:1199)
+	at java.util.concurrent.locks.ReentrantLock$NonfairSync.lock(ReentrantLock.java:209)
+	at java.util.concurrent.locks.ReentrantLock.lock(ReentrantLock.java:285)
+	at com.livedrof.j2se.concurrent.lock.DeadlockExample$1.run(DeadlockExample.java:17)
+	at java.lang.Thread.run(Thread.java:745)
+
+Found 1 deadlock.
