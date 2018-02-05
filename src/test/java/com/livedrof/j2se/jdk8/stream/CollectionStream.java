@@ -1,4 +1,4 @@
-package com.livedrof.j2se.jdk8.lambda;
+package com.livedrof.j2se.jdk8.stream;
 
 import com.google.common.collect.Lists;
 import org.junit.Test;
