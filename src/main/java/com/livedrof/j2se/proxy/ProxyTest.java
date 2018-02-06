@@ -22,6 +22,5 @@ public class ProxyTest {
      */
     private static Object getBean(Class<?> klass,InvocationHandler proxy) {
         return Proxy.newProxyInstance(klass.getClassLoader(), klass.getInterfaces(), proxy);
-
     }
 }
