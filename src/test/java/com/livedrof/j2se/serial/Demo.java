@@ -3,6 +3,8 @@ package com.livedrof.j2se.serial;
 import org.junit.Test;
 
 import java.io.*;
+import java.math.BigDecimal;
+import java.util.Optional;
 
 /**
  */
@@ -20,12 +22,12 @@ public class Demo implements Serializable {
         out.flush();
         out.close();
     }
+
     @Test
     public void testInput() throws IOException, ClassNotFoundException {
         InputStream fileInputStream = new FileInputStream(new File(filename));
         ObjectInputStream inputStream = new ObjectInputStream(fileInputStream);
         Object result = inputStream.readObject();
         System.out.println(result.getClass());
-
     }
 }
