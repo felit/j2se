@@ -1,6 +1,8 @@
 package com.livedrof.j2se.annotation;
 
+import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
+import java.lang.reflect.Method;
 
 @TestAnnotation(id = 100, msg = "hello annotation")
 public class Test {
@@ -34,11 +36,21 @@ public class Test {
             a = Test.class.getDeclaredField("a");
             a.setAccessible(true);
             Check check = a.getAnnotation(Check.class);
-            System.out.println(check);
             if (check != null) {
                 System.out.println("check value:" + check.value());
             }
+
+
+            Method testMethod = Test.class.getDeclaredMethod("testMethod");
+            if (testMethod != null) {
+                Annotation[] ans = testMethod.getAnnotations();
+                for(int i =0;i<ans.length;i++) {
+                    System.out.println("method testMethod annotation:" + ans[i].annotationType().getSimpleName());
+                }
+            }
         } catch (NoSuchFieldException e) {
+            e.printStackTrace();
+        } catch (NoSuchMethodException e) {
             e.printStackTrace();
         }
     }
