@@ -20,7 +20,7 @@ public class AioServer {
 
     /**
      * availableProcessors: 0
-     * channelWorkers: 6
+     * channel  Workers: 6
      * channelGroup: 174
      * serverSocket: 1
      * bind: 0
