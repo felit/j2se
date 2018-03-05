@@ -4,13 +4,19 @@ import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.InetSocketAddress;
 import java.nio.ByteBuffer;
-import java.nio.channels.AsynchronousServerSocketChannel;
-import java.nio.channels.AsynchronousSocketChannel;
-import java.nio.channels.CompletionHandler;
+import java.nio.channels.*;
 
 /**
- *  TODO 是否涉及拆包解包问题？
- *  channel的read/write操作会出现哪些异常？
+ * TODO 是否涉及拆包解包问题？
+ * channel的read/write操作会出现哪些异常？
+ * read:
+ * IllegalArgumentException
+ * ReadPendingException
+ * NotYetConnectedException
+ * write:
+ * WritePendingException
+ * NotYetConnectedException: If this channel is not yet connected
+ * ShutdownChannelGroupException: If the channel group has terminated
  */
 public class AsyncServerHandler {
     AsynchronousServerSocketChannel channel;
@@ -73,6 +79,7 @@ public class AsyncServerHandler {
 
         /**
          * 操作完成之后，即读操作完成之后。
+         *
          * @param result
          * @param attachment
          */
