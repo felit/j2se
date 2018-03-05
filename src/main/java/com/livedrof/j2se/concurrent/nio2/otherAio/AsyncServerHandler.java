@@ -52,10 +52,15 @@ public class AsyncServerHandler {
 
     }
 
+
+    /**
+     * Accept不会启用单独的线程
+     */
     static class AcceptHandler implements CompletionHandler<AsynchronousSocketChannel, AsyncServerHandler> {
 
         @Override
         public void completed(AsynchronousSocketChannel channel, AsyncServerHandler attachment) {
+            System.out.println("AcceptHandler线程名称：" + Thread.currentThread().getName());
 //            TODO 为什么会重复执行accept方法？
             attachment.channel.accept(attachment, this);
             ByteBuffer buffer = ByteBuffer.allocate(16);
