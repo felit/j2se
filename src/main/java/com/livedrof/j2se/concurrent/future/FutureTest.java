@@ -10,6 +10,7 @@ public class FutureTest {
         Task task = new Task();
         Future<Integer> result = executor.submit(task);
         executor.shutdown();
+        new CountDownLatch(2).await();
         System.out.println(result.get());
     }
 

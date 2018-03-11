@@ -12,6 +12,7 @@ public class BasicFuture {
     public static void main(String[] args) {
         Callable<Integer> callable = new Callable<Integer>() {
             public Integer call() throws Exception {
+                Thread.sleep(5000);
                 return new Random().nextInt(100);
             }
         };
