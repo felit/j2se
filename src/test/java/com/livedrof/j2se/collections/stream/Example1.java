@@ -4,6 +4,7 @@ import org.junit.Test;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 public class Example1 {
@@ -17,6 +18,10 @@ public class Example1 {
         users.add(user);
         List<String> usernames = users.stream().filter(u -> u.age < 10).map(u -> u.getUsername()).collect(Collectors.toList());
         System.out.println(usernames);
+        Map<Integer, User> userIndex = users.stream().collect(Collectors.toMap(User::getId, User -> User));
+        System.out.println(userIndex);
+        Map<Integer, String> usernameIndex = users.stream().collect(Collectors.toMap(User::getId, User -> User.getUsername()));
+        System.out.println(usernameIndex);
 
 
     }

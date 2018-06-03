@@ -4,6 +4,7 @@ import org.junit.Test;
 
 import java.io.*;
 import java.math.BigDecimal;
+import java.util.Arrays;
 import java.util.Optional;
 
 /**
@@ -29,5 +30,12 @@ public class Demo implements Serializable {
         ObjectInputStream inputStream = new ObjectInputStream(fileInputStream);
         Object result = inputStream.readObject();
         System.out.println(result.getClass());
+    }
+
+    @Test
+    public void testInt() {
+        System.out.println(1 == new Integer(1));
+        System.out.println(Arrays.stream(new int[]{1,2,3,4}).anyMatch(o -> o == new Integer(3)));
+
     }
 }
