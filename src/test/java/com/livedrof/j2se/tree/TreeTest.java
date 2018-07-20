@@ -1,5 +1,6 @@
 package com.livedrof.j2se.tree;
 
+import com.google.common.util.concurrent.RateLimiter;
 import com.livedrof.tree.TreeNode;
 import org.junit.Before;
 import org.junit.Test;
@@ -25,14 +26,22 @@ public class TreeTest {
     }
 
     @Test
-    public void test() {
-
+    public void test() throws InterruptedException {
+        RateLimiter limiter = RateLimiter.create(1);
+        System.out.println(limiter.acquire());
+        Thread.sleep(2000L);
+        for (int i = 0; i < 5; i++) {
+            System.out.println(System.currentTimeMillis());
+            System.out.println(limiter.tryAcquire());;
+            System.out.println(limiter.acquire());
+            System.out.println();
+        }
     }
 
     public void inOrder(TreeNode<String> root) {
         if (root == null) {
             System.out.println(root.getValue());
-        }else{
+        } else {
 
         }
     }

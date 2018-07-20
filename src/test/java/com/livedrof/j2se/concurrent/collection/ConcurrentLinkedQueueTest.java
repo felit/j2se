@@ -4,10 +4,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.concurrent.ConcurrentLinkedQueue;
-import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+import java.util.concurrent.*;
 
 public class ConcurrentLinkedQueueTest {
     private ConcurrentLinkedQueue<String> queue;
@@ -30,6 +27,8 @@ public class ConcurrentLinkedQueueTest {
     @Test
     public void test() throws InterruptedException {
         ExecutorService es = Executors.newFixedThreadPool(4);
+        ThreadPoolExecutor executor;
+
         doThis();
         for (int i = 0; i < count2; i++) {
             es.submit(new Runnable() {
