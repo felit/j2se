@@ -19,10 +19,11 @@ public class ArrayDequeueTest {
 
     @Test
     public void test2() {
-        ArrayBlockingQueue<Integer> deque = new ArrayBlockingQueue<Integer>(100);
+        ArrayBlockingQueue<Integer> queue = new ArrayBlockingQueue<Integer>(100);
+
         for (int i = 0; i < 1000; i++) {
             System.out.println(i);
-            deque.add(i);
+            queue.add(i);
         }
 
     }
