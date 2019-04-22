@@ -1,9 +1,9 @@
 package com.livedrof.testng;
 
 
+import lombok.extern.slf4j.Slf4j;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
 public class DemoTest {
     String message = "Manisha";
     MessageUtil messageUtil = new MessageUtil(message);
@@ -24,6 +24,7 @@ public class DemoTest {
 
     @Test
     public void initEnvironmentTest() {
+
         System.out.println("This is initEnvironmentTest");
     }
 }
