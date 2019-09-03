@@ -43,6 +43,21 @@ public class TestFloat {
         }
     }
 
+    @Test
+    public void testKK() {
+        try {
+            System.out.println(1 / 0);
+        } finally {
+            System.out.println("hello exception1");
+        }
+        System.out.println("hello exception3");
+        try {
+            Object o = new Object();
+        } finally {
+            System.out.println("hello exception2");
+        }
+    }
+
 
     private static int[][] data = {{3922805, 36000183, 221576},
             {3922805, 36000185, 221576},
