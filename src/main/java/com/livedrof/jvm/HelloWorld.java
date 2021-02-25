@@ -1,5 +1,7 @@
 package com.livedrof.jvm;
 
+import org.openjdk.jol.info.ClassLayout;
+
 import java.io.IOException;
 
 public class HelloWorld {

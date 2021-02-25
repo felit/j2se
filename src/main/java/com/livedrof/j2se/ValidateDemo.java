@@ -1,6 +1,6 @@
 package com.livedrof.j2se;
 
-import javax.annotation.Nonnull;
+//import javax.annotation.Nonnull;
 
 public class ValidateDemo {
     public static void main(String args[]) {
@@ -8,11 +8,11 @@ public class ValidateDemo {
         testNotNullReturn();
     }
 
-    public static void testNotNull(@Nonnull String kk) {
+    public static void testNotNull(String kk) {
         System.out.println("hello " + kk);
     }
 
-    @Nonnull
+    //    @Nonnull
     public static Object testNotNullReturn() {
         return null;
 

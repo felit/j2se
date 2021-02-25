@@ -58,6 +58,13 @@ public class TestFloat {
         }
     }
 
+    @Test
+    public void testLong() {
+        System.out.println(new Long(0) == 0L);
+        ;
+        System.out.println(null instanceof String);
+    }
+
 
     private static int[][] data = {{3922805, 36000183, 221576},
             {3922805, 36000185, 221576},
