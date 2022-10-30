@@ -1,6 +1,6 @@
 package com.livedrof.j2se.concurrent.lock;
 
-import sun.nio.ch.SelectorImpl;
+//import sun.nio.ch.SelectorImpl;
 
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.LockSupport;
@@ -11,7 +11,7 @@ public class DeadlockExample {
     private static Lock lock2 = new ReentrantLock();
 
     public static void main(String args[]) {
-        SelectorImpl se;
+//        SelectorImpl se;
         Thread a = new Thread(new Runnable() {
             @Override
             public void run() {

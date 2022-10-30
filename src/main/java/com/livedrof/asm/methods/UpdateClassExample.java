@@ -52,8 +52,8 @@ public class UpdateClassExample {
 //        newClass.newInstance().getClass().getMethod()
 
         //调用实例方法
-        Object instance = newClass.newInstance();
-        newClass.getMethod("m").invoke(instance);
+//        Object instance = newClass.newInstance();
+//        newClass.getMethod("m").invoke(instance);
 
         File file = new File("C.class");
         FileOutputStream outputStream = new FileOutputStream(file);

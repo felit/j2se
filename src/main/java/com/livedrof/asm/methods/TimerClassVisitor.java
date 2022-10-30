@@ -16,6 +16,11 @@ public class TimerClassVisitor extends ClassVisitor {
         MethodVisitor wrapperMV = mv;
         if (mv!=null&&name.equals("m")) {
             wrapperMV = new TimerMethodVisitor(ASM4, mv);
+            wrapperMV = new TimerProxyClassVisitor("1.0", ASM4, wrapperMV);
+            wrapperMV = new TimerProxyClassVisitor("2.0", ASM4, wrapperMV);
+            wrapperMV = new TimerProxyClassVisitor("3.0", ASM4, wrapperMV);
+            wrapperMV = new TimerProxyClassVisitor("4.0", ASM4, wrapperMV);
+            wrapperMV = new TimerProxyClassVisitor("5.0", ASM4, wrapperMV);
         }
         return wrapperMV;
     }
