@@ -32,9 +32,10 @@ public class Graph<T> {
         if (endEdge == null) {
             vertex.edge = edge;
         } else {
-            while (endEdge.next == null) {
-                endEdge.next = edge;
+            while (endEdge.next != null) {
+                endEdge = endEdge.next;
             }
+            endEdge.next = edge;
         }
     }
 
