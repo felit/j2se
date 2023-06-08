@@ -1,7 +1,5 @@
 package com.livedrof.algs.graph.direct;
 
-import java.util.Arrays;
-
 public class Edge<T> {
     int weight;
     Vertex[] vertex;

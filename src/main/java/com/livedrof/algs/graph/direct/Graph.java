@@ -16,6 +16,9 @@ public class Graph<T> {
         vertexIndex.put(v.getKey(), v);
     }
 
+    public Vertex<T> getOne() {
+        return verArr.stream().findFirst().get();
+    }
     public Vertex<T> getVertex(T key) {
         return this.vertexIndex.get(key);
     }
