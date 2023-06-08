@@ -1,5 +1,7 @@
 package com.livedrof.algs.graph.direct;
 
+import java.util.Arrays;
+
 public class Edge<T> {
     int weight;
     Vertex[] vertex;
@@ -17,4 +19,17 @@ public class Edge<T> {
         return vertex[0];
     }
 
+    @Override
+    protected Edge<T> clone() {
+        return new Edge<>(this.vertex[0], this.vertex[1]);
+    }
+
+    @Override
+    public String toString() {
+        return "Edge{" +
+                "weight=" + weight +
+                ", vertex=" + vertex[0].getKey() + "," + vertex[1].getKey() +
+                ", next=" + next +
+                '}';
+    }
 }
